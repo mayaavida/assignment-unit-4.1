@@ -15,30 +15,33 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-
+console.log('Should say "Hello, Maya!":', helloName('Maya'));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
-  // return firstNumber + secondNumber;
+function addNumbers( firstNumber, secondNumber ) {
+  return firstNumber + secondNumber;
 }
+
+console.log('Should say 8:', addNumbers(3, 5));
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree(firstNum, secondNum, thirdNum ){
+  return firstNum*secondNum*thirdNum;
 }
 
+console.log('Should say 6:', multiplyThree(2,3,1));
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
   }
-    return;
+    return false;
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
