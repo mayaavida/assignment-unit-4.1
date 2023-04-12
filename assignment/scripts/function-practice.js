@@ -26,6 +26,7 @@ function addNumbers( firstNumber, secondNumber ) {
 }
 
 console.log('Should say 8:', addNumbers(3, 5));
+console.log('Should say -8:', addNumbers(-3, -5));
 
 
 // 4. Function to multiply three numbers & return the result
@@ -94,7 +95,7 @@ console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 function sumAll(newArray) {
   let sum = 0
   // TODO: loop to add items
-  for(number of newArray){
+  for(let number of newArray){
     sum += number;
   }
   return sum;
@@ -106,8 +107,51 @@ console.log('Sum of array should display 10:', sumAll([2,4,1,3]))
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
 
+function returnPositiveArray(inputArray) {
+  let positiveArray = []
+  for(let number of inputArray){
+    if(number > 0){
+      positiveArray.push(number)
+    }
+  }
+  if(positiveArray.length > 0){
+    return positiveArray;
+  }else{
+    return [];
+  }
+}
+
+console.log('Should return array of positive numbers:', returnPositiveArray([3,-1,-2,5,6]));
+console.log('Should return empty array:', returnPositiveArray([-3,-4,-5]));
 
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// FROM CODEWARS:
+
+// To find the volume (centimeters cubed) of a cuboid you use the formula:
+
+// volume = Length * Width * Height
+
+// But someone forgot to use proper record keeping, so we only have the volume, and the length of a single side!
+
+// It's up to you to find out whether the cuboid has equal sides (= is a cube).
+
+// Return true if the cuboid could have equal sides, return false otherwise.
+
+// Return false for invalid numbers too (e.g volume or side is less than or equal to 0).
+
+// Note: side will be an integer
+
+let cubeChecker = function(volume, side){
+  if(volume <= 0 || side <= 0){
+   return false
+ }
+ return (Math.pow(side, 3) === volume) ? true: false;
+};
+
+console.log('Should say true:', cubeChecker(27, 3));
+console.log('Should say false:', cubeChecker(0, 2));
+console.log('Should say false:', cubeChecker(18, 2));
